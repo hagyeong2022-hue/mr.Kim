@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "매출보고서",
+      "runtimeExecutable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "runtimeArgs": ["-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\mylov\\.claude-serve\\serve.ps1"],
+      "port": 9876,
+      "autoPort": true
+    },
+    {
+      "name": "Remotion Studio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "studio"],
+      "port": 3000
+    }
+  ]
+}

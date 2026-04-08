@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Read(//c/Users/mylov/AppData/Local/Programs/**)",
+      "Read(//c/Users/mylov/AppData/Local/Microsoft/WindowsApps//**)",
+      "Bash(npm --version)",
+      "Bash(ls /c/Python*)",
+      "Read(//c/Users/mylov/**)",
+      "Bash(timeout 5 powershell -ExecutionPolicy Bypass -File \".claude/serve.ps1\")",
+      "Bash(echo \"exit: $?\")",
+      "WebFetch(domain:subtrac.kr)",
+      "Bash(netstat -ano)",
+      "Bash(tasklist)"
+    ]
+  }
+}

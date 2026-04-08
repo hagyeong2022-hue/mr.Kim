@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "업무대시보드.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "업무대시보드.html"
+    }
+  ]
+}

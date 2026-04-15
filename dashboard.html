@@ -1707,16 +1707,6 @@ function getFileIcon(fileType) {
   return icons[fileType] || '📎';
 }
 
-// 페이지 로드 시 모든 Google 데이터 로드
-window.addEventListener('load', () => {
-  loadGmailData();
-  loadCalendarData();
-  loadDriveData();
-  loadSheetsData();
-});
-
-</script>
-
 <!-- Google 서비스 통합 섹션 -->
 <div style="margin-top: 40px;">
   <h2 style="font-size: 24px; color: #1a1a1a; margin-bottom: 20px; font-weight: 600;">🔗 Google 서비스</h2>
@@ -1751,6 +1741,17 @@ window.addEventListener('load', () => {
     </div>
   </div>
 </div>
+
+<script>
+// 페이지 로드 시 모든 Google 데이터 로드
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('✅ DOM 로드 완료, Google 데이터 로드 시작...');
+  loadGmailData();
+  loadCalendarData();
+  loadDriveData();
+  loadSheetsData();
+});
+</script>
 
 </body>
 </html>

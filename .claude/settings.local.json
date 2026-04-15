@@ -11,7 +11,13 @@
       "Bash(echo \"exit: $?\")",
       "WebFetch(domain:subtrac.kr)",
       "Bash(netstat -ano)",
-      "Bash(tasklist)"
+      "Bash(tasklist)",
+      "Bash(vercel --version)",
+      "Bash(npm -v)",
+      "Bash(ls -la *.html)",
+      "Bash(npm install:*)",
+      "Bash(powershell -Command \"npm install\")",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" install)"
     ]
   }
 }

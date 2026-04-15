@@ -1,0 +1,51 @@
+{
+  "updated_at": "2026-04-15T20:30:00Z",
+  "source": "mock",
+  "files": [
+    {
+      "id": "file_001",
+      "name": "Q2 마케팅 전략.pdf",
+      "mimeType": "application/pdf",
+      "fileType": "파일",
+      "modifiedTime": "2026. 4. 15. 오후 3:20",
+      "webLink": "https://drive.google.com/file/d/file_001/view",
+      "owner": "boss@company.com"
+    },
+    {
+      "id": "file_002",
+      "name": "2026년 예산 계획안",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "fileType": "시트",
+      "modifiedTime": "2026. 4. 14. 오후 6:45",
+      "webLink": "https://docs.google.com/spreadsheets/d/file_002/edit",
+      "owner": "finance@company.com"
+    },
+    {
+      "id": "file_003",
+      "name": "제품 로드맵 프레젠테이션",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "fileType": "프레젠테이션",
+      "modifiedTime": "2026. 4. 14. 오전 11:30",
+      "webLink": "https://docs.google.com/presentation/d/file_003/edit",
+      "owner": "product@company.com"
+    },
+    {
+      "id": "file_004",
+      "name": "고객 분석 리포트",
+      "mimeType": "application/vnd.google-apps.document",
+      "fileType": "문서",
+      "modifiedTime": "2026. 4. 13. 오후 2:15",
+      "webLink": "https://docs.google.com/document/d/file_004/edit",
+      "owner": "analytics@company.com"
+    },
+    {
+      "id": "file_005",
+      "name": "마케팅 캠페인 영상",
+      "mimeType": "video/mp4",
+      "fileType": "동영상",
+      "modifiedTime": "2026. 4. 12. 오후 4:00",
+      "webLink": "https://drive.google.com/file/d/file_005/view",
+      "owner": "media@company.com"
+    }
+  ]
+}

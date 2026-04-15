@@ -1386,12 +1386,25 @@ new Chart(document.getElementById('categoryDoughnut'), {
 // Gmail 데이터 로드
 async function loadGmailData() {
   try {
+    // 먼저 JSON 파일 시도
     const response = await fetch('gmail-data.json');
+    if (!response.ok) throw new Error('파일 로드 실패');
     const data = await response.json();
     renderGmailCard(data);
   } catch (error) {
-    console.warn('Gmail 데이터 로드 실패:', error);
-    renderGmailCard(null);
+    console.warn('Gmail 데이터 로드 실패, 샘플 데이터 사용:', error.message);
+    // 샘플 데이터 사용
+    const sampleData = {
+      "updated_at": "2026-04-15T20:30:00Z",
+      "total_unread": 7,
+      "source": "mock",
+      "messages": [
+        {"id": "msg_001", "from": "boss@company.com", "subject": "Q2 마케팅 전략 리뷰 회의", "date": "2026. 4. 15. 오후 3:45", "snippet": "내일 오후 2시에 전략 회의를 진행하겠습니다."},
+        {"id": "msg_002", "from": "client@example.com", "subject": "프로젝트 최종 납기 일정 확인", "date": "2026. 4. 15. 오전 10:20", "snippet": "프로젝트 최종 납기 일정이 다음주 월요일로 확정되었습니다."},
+        {"id": "msg_003", "from": "team@company.com", "subject": "[공지] 개발팀 스프린트 계획 변경", "date": "2026. 4. 14. 오후 5:15", "snippet": "이번 스프린트는 성능 최적화에 집중하기로 결정했습니다."}
+      ]
+    };
+    renderGmailCard(sampleData);
   }
 }
 
@@ -1399,11 +1412,22 @@ async function loadGmailData() {
 async function loadCalendarData() {
   try {
     const response = await fetch('calendar-data.json');
+    if (!response.ok) throw new Error('파일 로드 실패');
     const data = await response.json();
     renderCalendarCard(data);
   } catch (error) {
-    console.warn('Calendar 데이터 로드 실패:', error);
-    renderCalendarCard(null);
+    console.warn('Calendar 데이터 로드 실패, 샘플 데이터 사용:', error.message);
+    const sampleData = {
+      "updated_at": "2026-04-15T20:30:00Z",
+      "source": "mock",
+      "events": [
+        {"id": "evt_001", "title": "마케팅팀 정기 회의", "start": "2026-04-16T14:00:00+09:00", "end": "2026-04-16T15:00:00+09:00", "location": "회의실 A", "description": "분기별 마케팅 목표 및 전략 검토"},
+        {"id": "evt_002", "title": "클라이언트 프레젠테이션", "start": "2026-04-17T10:30:00+09:00", "end": "2026-04-17T11:30:00+09:00", "location": "온라인 (Zoom)", "description": "신규 프로젝트 제안서 발표"},
+        {"id": "evt_003", "title": "스프린트 플래닝", "start": "2026-04-18T09:00:00+09:00", "end": "2026-04-18T10:30:00+09:00", "location": "개발팀 슬랙", "description": "다음 스프린트 작업 계획 수립"},
+        {"id": "evt_004", "title": "1:1 면담", "start": "2026-04-18T15:00:00+09:00", "end": "2026-04-18T15:30:00+09:00", "location": "관리자 사무실", "description": "개인 성과 및 경력 개발 논의"}
+      ]
+    };
+    renderCalendarCard(sampleData);
   }
 }
 
@@ -1411,11 +1435,23 @@ async function loadCalendarData() {
 async function loadDriveData() {
   try {
     const response = await fetch('drive-data.json');
+    if (!response.ok) throw new Error('파일 로드 실패');
     const data = await response.json();
     renderDriveCard(data);
   } catch (error) {
-    console.warn('Drive 데이터 로드 실패:', error);
-    renderDriveCard(null);
+    console.warn('Drive 데이터 로드 실패, 샘플 데이터 사용:', error.message);
+    const sampleData = {
+      "updated_at": "2026-04-15T20:30:00Z",
+      "source": "mock",
+      "files": [
+        {"id": "file_001", "name": "Q2 마케팅 전략.pdf", "mimeType": "application/pdf", "fileType": "파일", "modifiedTime": "2026. 4. 15. 오후 3:20", "webLink": "https://drive.google.com/file/d/file_001/view", "owner": "boss@company.com"},
+        {"id": "file_002", "name": "2026년 예산 계획안", "mimeType": "application/vnd.google-apps.spreadsheet", "fileType": "시트", "modifiedTime": "2026. 4. 14. 오후 6:45", "webLink": "https://docs.google.com/spreadsheets/d/file_002/edit", "owner": "finance@company.com"},
+        {"id": "file_003", "name": "제품 로드맵 프레젠테이션", "mimeType": "application/vnd.google-apps.presentation", "fileType": "프레젠테이션", "modifiedTime": "2026. 4. 14. 오전 11:30", "webLink": "https://docs.google.com/presentation/d/file_003/edit", "owner": "product@company.com"},
+        {"id": "file_004", "name": "고객 분석 리포트", "mimeType": "application/vnd.google-apps.document", "fileType": "문서", "modifiedTime": "2026. 4. 13. 오후 2:15", "webLink": "https://docs.google.com/document/d/file_004/edit", "owner": "analytics@company.com"},
+        {"id": "file_005", "name": "마케팅 캠페인 영상", "mimeType": "video/mp4", "fileType": "동영상", "modifiedTime": "2026. 4. 12. 오후 4:00", "webLink": "https://drive.google.com/file/d/file_005/view", "owner": "media@company.com"}
+      ]
+    };
+    renderDriveCard(sampleData);
   }
 }
 
@@ -1423,11 +1459,23 @@ async function loadDriveData() {
 async function loadSheetsData() {
   try {
     const response = await fetch('sheets-data.json');
+    if (!response.ok) throw new Error('파일 로드 실패');
     const data = await response.json();
     renderSheetsCard(data);
   } catch (error) {
-    console.warn('Sheets 데이터 로드 실패:', error);
-    renderSheetsCard(null);
+    console.warn('Sheets 데이터 로드 실패, 샘플 데이터 사용:', error.message);
+    const sampleData = {
+      "updated_at": "2026-04-15T20:30:00Z",
+      "source": "mock",
+      "message": "SHEETS_TARGET_ID 환경변수를 설정해주세요",
+      "headers": ["날짜", "프로젝트", "진행률", "담당자", "상태"],
+      "data": [
+        {"날짜": "2026-04-15", "프로젝트": "웹사이트 개편", "진행률": "85%", "담당자": "김개발", "상태": "진행 중"},
+        {"날짜": "2026-04-14", "프로젝트": "모바일 앱 업데이트", "진행률": "60%", "담당자": "이앱", "상태": "진행 중"},
+        {"날짜": "2026-04-13", "프로젝트": "데이터 마이그레이션", "진행률": "100%", "담당자": "박데이터", "상태": "완료"}
+      ]
+    };
+    renderSheetsCard(sampleData);
   }
 }
 
